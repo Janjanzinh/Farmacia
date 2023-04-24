@@ -28,9 +28,9 @@ public class Produto {
 	@NotNull(message = "O Atributo Descrição é obrigatório")
 	private String descricao;
 
-//	@OneToMany(fetch = FetchType.LAZY, mappedBy = "produto", cascade = CascadeType.REMOVE)
+//	(fetch = FetchType.LAZY, mappedBy = "produto", cascade = CascadeType.REMOVE)
 //	@JsonIgnoreProperties("produto")
-	private List<Produto> produtos;
+//	private List<Produto> produtos;
 
 	
 	@UpdateTimestamp
@@ -57,14 +57,14 @@ public class Produto {
 	}
 
 
-	public List<Produto> getProdutos() {
-		return produtos;
-	}
+//	public List<Produto> getProdutos() {
+//		return produtos;
+//	}
 
 
-	public void setProdutos(List<Produto> produtos) {
-		this.produtos = produtos;
-	}
+//	public void setProdutos(List<Produto> produtos) {
+//		this.produtos = produtos;
+//	}
 
 
 	public LocalDateTime getData() {
