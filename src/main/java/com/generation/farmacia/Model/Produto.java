@@ -13,6 +13,7 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
@@ -28,53 +29,43 @@ public class Produto {
 	@NotNull(message = "O Atributo Descrição é obrigatório")
 	private String descricao;
 
-//	(fetch = FetchType.LAZY, mappedBy = "produto", cascade = CascadeType.REMOVE)
-//	@JsonIgnoreProperties("produto")
-//	private List<Produto> produtos;
+	@ManyToOne
+	@JsonIgnoreProperties("categoria")
+	private Categoria categoria;
 
-	
 	@UpdateTimestamp
 	private LocalDateTime data;
-
 
 	public Long getId() {
 		return Id;
 	}
 
-
 	public void setId(Long id) {
 		Id = id;
 	}
-
 
 	public String getDescricao() {
 		return descricao;
 	}
 
-
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-
-
-//	public List<Produto> getProdutos() {
-//		return produtos;
-//	}
-
-
-//	public void setProdutos(List<Produto> produtos) {
-//		this.produtos = produtos;
-//	}
-
 
 	public LocalDateTime getData() {
 		return data;
 	}
 
-
 	public void setData(LocalDateTime data) {
 		this.data = data;
 	}
 
+	public Categoria getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
+	}
 
 }

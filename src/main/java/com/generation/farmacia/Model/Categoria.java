@@ -25,9 +25,9 @@ public class Categoria {
 	@NotNull(message = "O Atributo Descrição é obrigatório")
 	private String descricao;
 
-//	@OneToMany(fetch = FetchType.LAZY, mappedBy = "categoria", cascade = CascadeType.REMOVE)
-//	@JsonIgnoreProperties("categoria")
-//	private List<Categoria> categoria;
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "categoria", cascade = CascadeType.REMOVE)
+	@JsonIgnoreProperties("categoria")
+	private List<Produto> produtos;
 
 	public Long getId() {
 		return id;
@@ -45,12 +45,12 @@ public class Categoria {
 		this.descricao = descricao;
 	}
 
-//	public List<Categoria> getCategoria() {
-//		return categoria;
-//	}
-//
-//	public void setCategoria(List<Categoria> categoria) {
-//		this.categoria = categoria;
-//	}
+	public List<Produto> getProdutos() {
+		return produtos;
+	}
+
+	public void setProdutos(List<Produto> produtos) {
+		this.produtos = produtos;
+	}
+
 }
-	
