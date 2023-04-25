@@ -53,4 +53,9 @@ public class Categoria {
 		this.produtos = produtos;
 	}
 
+	public static boolean isEmpty() {
+		
+		return false;
+	}
+
 }
